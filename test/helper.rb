@@ -33,13 +33,7 @@ end
 #
 # TODO: the setter doesnt work in Rails 5.1
 #
-ActiveRecord::Base.configurations = { "test" => { adapter: 'sqlite3', database: ':memory:' } }
-
-if ActiveRecord::Base.configurations.has_key?('key')
-  ActiveRecord::Base.establish_connection(:test)
-else
-  ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: ':memory:')
-end
+ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: ':memory:')
 
 ActiveRecord::Schema.verbose = false
 ActiveRecord::Schema.define do
