@@ -15,10 +15,10 @@ matrix:
   allow_failures:
     - rvm: ruby-head
   fast_finish: true
-notifications:
-  email: false
-  irc:
-    on_success: change
-    on_failure: always
-    channels:
-      - "irc.freenode.org#rails-contrib"
+# notifications:
+#   email: false
+#   irc:
+#     on_success: change
+#     on_failure: always
+#     channels:
+#       - "irc.freenode.org#rails-contrib"
