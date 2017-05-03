@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/rails/rails-observers.png)](https://travis-ci.org/rails/rails-observers)
+[![Build Status](https://travis-ci.org/DmytroStepaniuk/rails-observers.png)](https://travis-ci.org/DmytroStepaniuk/rails-observers)
 # Rails::Observers
 
 Rails Observers (removed from core in Rails 4.0)
