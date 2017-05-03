@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/DmytroStepaniuk/rails-observers.png)](https://travis-ci.org/DmytroStepaniuk/rails-observers)
+[![Inline docs](https://gemnasium.com/DmytroStepaniuk/rails-observers.svg?branch=master)](https://gemnasium.com/DmytroStepaniuk/rails-observers)
 # Rails::Observers
 
 Rails Observers (removed from core in Rails 4.0)
