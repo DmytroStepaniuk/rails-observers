@@ -19,19 +19,27 @@ end
 class ActiveSupport::TestCase
   include ActiveRecord::TestFixtures
 
-  self.test_order = :random if self.respond_to?(:test_order=)
-  self.fixture_path = FIXTURES_ROOT
+  self.test_order                 = :random if self.respond_to?(:test_order=)
+  self.fixture_path               = FIXTURES_ROOT
   self.use_instantiated_fixtures  = false
   self.use_transactional_fixtures = true if Rails.version_matches?('~> 4.0')
-  self.use_transactional_tests = true if self.respond_to?(:use_transactional_tests=)
+  self.use_transactional_tests    = true if self.respond_to?(:use_transactional_tests=)
 end
 
 if ActiveRecord::Base.respond_to?(:raise_in_transactional_callbacks=) && Rails.version_matches?('~> 4.0')
   ActiveRecord::Base.raise_in_transactional_callbacks = true
 end
 
+#
+# TODO: the setter doesnt work in Rails 5.1
+#
 ActiveRecord::Base.configurations = { "test" => { adapter: 'sqlite3', database: ':memory:' } }
-ActiveRecord::Base.establish_connection(:test)
+
+if ActiveRecord::Base.configurations.has_key?('key')
+  ActiveRecord::Base.establish_connection(:test)
+else
+  ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: ':memory:')
+end
 
 ActiveRecord::Schema.verbose = false
 ActiveRecord::Schema.define do

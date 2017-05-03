@@ -29,7 +29,7 @@ class Foo
   include ActiveModel::Observing
 end
 
-class ObservingTest < ActiveModel::TestCase
+class ObservingTest < (defined?(ActiveModel::TestCase) ? ActiveModel::TestCase : ActiveSupport::TestCase)
   def setup
     ObservedModel.observers.clear
     FooObserver.singleton_class.instance_eval do
@@ -104,7 +104,7 @@ class ObservingTest < ActiveModel::TestCase
   end
 end
 
-class ObserverTest < ActiveModel::TestCase
+class ObserverTest < (defined?(ActiveModel::TestCase) ? ActiveModel::TestCase : ActiveSupport::TestCase)
   def setup
     ObservedModel.observers = :foo_observer
     FooObserver.singleton_class.instance_eval do

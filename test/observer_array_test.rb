@@ -1,9 +1,10 @@
 require 'minitest/autorun'
 require 'active_model'
+require 'active_support'
 require 'rails/observers/active_model/active_model'
 require 'models/observers'
 
-class ObserverArrayTest < ActiveModel::TestCase
+class ObserverArrayTest < (defined?(ActiveModel::TestCase) ? ActiveModel::TestCase : ActiveSupport::TestCase)
   def teardown
     ORM.observers.enable :all
     Budget.observers.enable :all
