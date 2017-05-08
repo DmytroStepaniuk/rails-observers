@@ -1,5 +1,5 @@
 module Rails
   module Observers
-    VERSION = "0.1.4.1.alpha"
+    VERSION = "0.1.4.2.alpha"
   end
 end
