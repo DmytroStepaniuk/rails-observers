@@ -33,11 +33,7 @@ module ApplicationTests
           end
         RUBY
 
-        #
-        # TODO: fix mix
-        #
-        # assert_equal "0", `bundle exec rake user:count`.strip
-        assert_equal "", `bundle exec rake user:count`.strip
+        assert_equal "0", `bundle exec rake user:count`.strip
       end
     end
   end
