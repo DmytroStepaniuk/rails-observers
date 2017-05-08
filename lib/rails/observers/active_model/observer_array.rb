@@ -5,9 +5,11 @@ module ActiveModel
   # a particular model class.
   class ObserverArray < Array
     attr_reader :model_class
+
     def initialize(model_class, *args) #:nodoc:
       @model_class = model_class
-      super(*args)
+
+      super *args
     end
 
     # Returns +true+ if the given observer is disabled for the model class,
