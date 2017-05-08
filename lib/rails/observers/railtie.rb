@@ -6,7 +6,9 @@ module Rails
       initializer 'active_record.observer', before: 'active_record.set_configs' do |app|
         ActiveSupport.on_load(:active_record) do
           require 'rails/observers/activerecord/active_record'
+
           observers = app.config.active_record.delete(:observers)
+
           self.observers = observers if observers
         end
       end
