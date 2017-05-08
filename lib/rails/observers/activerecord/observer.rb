@@ -130,7 +130,3 @@ module ActiveRecord
       end
   end
 end
-
-if defined?(ActionController) and defined?(ActionController::Caching::Sweeping)
-  require 'rails/observers/action_controller/caching/sweeper'
-end
